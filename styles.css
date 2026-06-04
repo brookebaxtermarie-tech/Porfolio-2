@@ -480,13 +480,18 @@ a { color: inherit; text-decoration: none; }
 .pg-bento {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "left  right"
+    "stats right";
   gap: clamp(12px, 2vw, 18px);
   margin-top: 24px;
   align-items: start;
 }
+.pg-bento > .pg-bento-card { grid-area: left; }
 .pg-bento-right {
   display: flex; flex-direction: column;
   gap: clamp(12px, 2vw, 18px);
+  grid-area: right;
 }
 .pg-bento-card {
   background: var(--surface-2);
@@ -495,7 +500,10 @@ a { color: inherit; text-decoration: none; }
   padding: clamp(16px, 2.5vw, 22px);
 }
 @media (max-width: 860px) {
-  .pg-bento { grid-template-columns: 1fr; }
+  .pg-bento {
+    grid-template-columns: 1fr;
+    grid-template-areas: "left" "right" "stats";
+  }
 }
 
 /* two-half split */
@@ -612,10 +620,10 @@ a { color: inherit; text-decoration: none; }
 
 /* .pg-ph placeholder rules removed — replaced by real .pg-cc-photo grid */
 
-/* full-width stats row */
+/* stats row sits in left-column row 2, right column spans both rows */
 .pg-stats-row {
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
-  grid-column: 1 / -1;
+  grid-area: stats;
   margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--line);
 }
 @media (max-width: 680px){ .pg-stats-row { grid-template-columns: repeat(2, 1fr); } }
