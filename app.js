@@ -15,12 +15,12 @@
 
   /* ---------- TOOLS TICKER ---------- */
   const tools = [
-    ['n8n',            'workflows',  'assets/integrations/N8n-logo-new.svg'],
+    ['n8n',            'workflows',  'assets/integrations/n8n.webp'],
     ['Claude API',     'agents',     'assets/integrations/claude-logo.svg'],
     ['Python',         'automation', 'assets/integrations/Python-logo-notext.svg.png'],
     ['Next.js',        'full-stack', 'assets/integrations/Nextjs-logo.svg.png'],
     ['Supabase',       'realtime db','assets/integrations/supabase.webp'],
-    ['Google Cloud Run','serverless','assets/integrations/googlecloudrun.webp'],
+    ['Google Cloud Run','serverless','assets/integrations/googlecloudrun.png'],
     ['Teamleader',     'CRM',        'assets/integrations/teamleader.png'],
     ['Microsoft Graph','M365 API',   'assets/integrations/microsoftgraphapilogo.png'],
     ['Docker',         'containers', 'assets/integrations/docker-icon-logo-icon-png-svg.png'],
@@ -28,10 +28,10 @@
   ];
   const track = document.getElementById('track');
   if (track) {
-    const make = () => tools.map(([name, sub, img]) =>
-      `<div class="tool"><img class="glyph" src="${img}" alt="${name}" />${name}<small>${sub}</small></div>`
-    ).join('');
-    track.innerHTML = make() + make(); // duplicate for seamless loop
+    const makeSet = () => `<div class="marquee__set">${
+      tools.map(([name, sub, img]) => `<div class="tool"><img src="${img}" alt="${name}" /></div>`).join('')
+    }</div>`;
+    track.innerHTML = makeSet() + makeSet(); // two identical sets for seamless loop
   }
 
   /* ============================================================
