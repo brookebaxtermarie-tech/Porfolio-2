@@ -209,6 +209,7 @@ a { color: inherit; text-decoration: none; }
 
 /* photo is clipped to show only the right portion (split → right edge) */
 .dr-photo {
+  top: 10%; /* shifts photo down so faces align across the drag divider */
   clip-path: inset(0 0 0 var(--split));
 }
 
