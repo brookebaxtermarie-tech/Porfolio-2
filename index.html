@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Brooke Baxter — AI Implementation & Automation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Hanken+Grotesk:wght@400;420;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- hidden SVG duotone filters -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="duo-warm" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.16 0.99"/>
+      <feFuncG type="table" tableValues="0.10 0.95"/>
+      <feFuncB type="table" tableValues="0.06 0.86"/>
+    </feComponentTransfer>
+  </filter>
+  <filter id="duo-cool" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0.33 0.33 0.33 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.03 0.90"/>
+      <feFuncG type="table" tableValues="0.16 0.96"/>
+      <feFuncB type="table" tableValues="0.17 0.93"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav">
+  <a class="nav__brand" href="#top"><span class="dot"></span>Brooke Baxter</a>
+  <div class="nav__links">
+    <a href="#work">Work</a>
+    <a href="#approach">Approach</a>
+    <a href="#experience">Experience</a>
+    <a class="nav__cta" href="#contact">Let's talk</a>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+
+    <div class="hero__intro">
+      <h1 class="hero__name display">
+        <span class="ln">Brooke</span>
+        <span class="ln"><em>Baxter</em></span>
+      </h1>
+      <div class="hero__intro-meta">
+        <p class="hero__tagline" style="line-height: 1.45">I find where processes are slow, figure out <b>why</b>, and build the thing that fixes it.</p>
+        <div class="hero__loc"><span class="pulse"></span>Antwerp, Belgium &middot; Open to work</div>
+      </div>
+    </div>
+
+    <!-- drag reveal -->
+    <div class="hero__reveal-wrap show-teal" id="reveal" style="--split:52%">
+
+      <!-- illustration layer: low-poly, base (left) -->
+      <img class="dr-illus" src="assets/brooke-illus.png" alt="" aria-hidden="true" draggable="false" />
+
+      <!-- photo layer: B&W, clipped to right of divider -->
+      <img class="dr-photo" src="assets/brooke-photo-bw.png" alt="Brooke Baxter" draggable="false" />
+
+      <!-- vertical divider + drag handle -->
+      <div class="dr-divider" aria-hidden="true">
+        <div class="dr-handle">
+          <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true">
+            <path d="M7 5l-4 5 4 5M13 5l4 5-4 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+      </div>
+
+      <!-- teal chips: creative / brand persona -->
+      <div class="dr-chips dr-chips--teal" aria-hidden="true">
+        <span class="dr-chip">Marketing</span>
+        <span class="dr-chip">Product</span>
+        <span class="dr-chip">Brand</span>
+        <span class="dr-chip">Creative</span>
+      </div>
+
+      <!-- blue chips: technical / builder persona -->
+      <div class="dr-chips dr-chips--blue" aria-hidden="true">
+        <span class="dr-chip">Automation</span>
+        <span class="dr-chip">AI Implementation</span>
+        <span class="dr-chip">Full-stack</span>
+        <span class="dr-chip">Ships things</span>
+      </div>
+
+      <!-- drag hint: fades after first interaction -->
+      <div class="dr-hint" aria-hidden="true">
+        <svg viewBox="0 0 20 20" width="12" height="12" fill="none">
+          <path d="M7 5l-4 5 4 5M13 5l4 5-4 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+        drag
+      </div>
+
+    </div><!-- /drag reveal -->
+
+    <p class="hero__sub">AI implementation consultant &amp; automation builder. Product/marketing hybrid working across the US and EU.</p>
+
+  </div>
+</header>
+
+<!-- ============ TOOLS TICKER ============ -->
+<section class="ticker" aria-label="Tools">
+  <p class="ticker__lead">Tools I build with</p>
+  <div class="marquee">
+    <div class="marquee__track" id="track"></div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Selected work</p>
+        <h2>Proof, not&nbsp;promises.</h2>
+      </div>
+      <p class="meta">05 projects &middot; 2023–2026</p>
+    </div>
+
+    <div class="bento">
+
+      <!-- ESSMA wide -->
+      <article class="card card--wide reveal" id="essma">
+        <div class="card__pad">
+          <span class="card__tag" style="background:color-mix(in srgb,var(--essma) 12%,#fff);color:var(--essma)">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--essma)"></span>ESSMA &middot; 350+ stadiums
+          </span>
+          <h3 class="card__title">An AI newsletter pipeline that gave the editorial team their week back.</h3>
+          <p class="card__desc">Built a Claude-powered pipeline plus a 5-API ticketing automation for the European Stadium &amp; Safety Management Association. What used to be ~1.5 hours of manual curation runs in ~15 minutes, every Tuesday, for &euro;0.25 a week.</p>
+
+          <div class="essma-grid">
+            <!-- pipeline -->
+            <div>
+              <p class="eyebrow" style="margin-bottom:14px">How it works</p>
+              <div class="pipe" id="pipe">
+                <div class="pipe__step" data-i="0"><span class="ic" style="background:var(--essma-2)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1.5" fill="#fff" stroke="none"/></svg></span><div><div class="t">Source ingestion</div><div class="s">RSS feeds, stadium news</div></div></div>
+                <div class="pipe__arrow" data-i="0"></div>
+                <div class="pipe__step" data-i="1"><span class="ic" style="background:#6E59C7"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3v18M5 7l7 4 7-4"/></svg></span><div><div class="t">Claude API filtering</div><div class="s">Relevance scoring + summary</div></div></div>
+                <div class="pipe__arrow" data-i="1"></div>
+                <div class="pipe__step" data-i="2"><span class="ic" style="background:#7B6BD0"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span><div><div class="t">Content structuring</div><div class="s">Ranked, categorised, formatted</div></div></div>
+                <div class="pipe__arrow" data-i="2"></div>
+                <div class="pipe__step" data-i="3"><span class="ic" style="background:var(--pure-amber)"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 15a4 4 0 0 1 .5-8 6 6 0 0 1 11.5 1.5A3.5 3.5 0 0 1 17 15z"/></svg></span><div><div class="t">Google Cloud Run</div><div class="s">Python — scheduled weekly</div></div></div>
+                <div class="pipe__arrow" data-i="3"></div>
+                <div class="pipe__step" data-i="4"><span class="ic" style="background:#D98324"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 7l9 6 9-6M3 7v10h18V7M3 7l9-3 9 3"/></svg></span><div><div class="t">Mailchimp distribution</div><div class="s">350+ stadiums &amp; clubs</div></div></div>
+              </div>
+            </div>
+            <!-- newsletter -->
+            <div>
+              <p class="eyebrow" style="margin-bottom:14px">Output — the weekly digest</p>
+              <div class="news">
+                <div class="news__hd">
+                  <h4>Stadium Industry Update</h4>
+                  <p>Weekly digest — powered by AI curation</p>
+                </div>
+                <div class="news__body">
+                  <div class="news__item"><div class="k">Technology</div><h5>UEFA pilots AI crowd-flow system across 12 venues</h5><p>Sensor-based tooling cut congestion at entry points by an estimated 30% during peak ingress windows…</p></div>
+                  <div class="news__item"><div class="k">Safety &amp; Operations</div><h5>New EN 13200 revision targets sightline standards</h5><p>Updated European seating standard introduces stricter sightline requirements for newly built stands…</p></div>
+                  <div class="news__item"><div class="k">Sustainability</div><h5>Forest Green Rovers hit net-zero venue certification</h5><p>The New Lawn becomes the first stadium in Europe to receive full net-zero operational status…</p></div>
+                </div>
+                <div class="news__ft">Curated by AI &middot; Reviewed in minutes &middot; Sent every Tuesday</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="statrow">
+            <div class="stat"><div class="n" data-count="85" data-suffix="%">0%</div><div class="l">Editorial time saved</div></div>
+            <div class="stat"><div class="n" data-count="6" data-suffix=" hrs">0 hrs</div><div class="l">Returned per week</div></div>
+            <div class="stat"><div class="n" data-count="5" data-suffix="">0</div><div class="l">APIs integrated</div></div>
+            <div class="stat"><div class="n">&euro;0.25</div><div class="l">Infra cost / week</div></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Elev8 -->
+      <article class="card card--wide reveal" id="elev8">
+        <div class="card__pad">
+          <span class="card__tag" style="background:color-mix(in srgb,var(--elev8) 11%,#fff);color:var(--elev8)">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--elev8)"></span>Elev8 Metro &middot; E³UDRES² &middot; Coordinator
+          </span>
+
+          <div class="elev8-grid">
+            <div class="elev8-narr">
+              <h3 class="card__title">A full-stack campaign builder for 9&nbsp;European universities.</h3>
+              <p class="card__desc">Designed and shipped a full-stack campaign builder for the E³UDRES² European university alliance — a 4-role permission system, a Supabase Realtime facilitator dashboard, and a 6-block canvas editor. Went live at the VIBE Days workshop — <b>44 campaign lines built that day.</b></p>
+
+              <div class="feat">
+                <span class="feat__chip">4-role permissions</span>
+                <span class="feat__chip">Supabase Realtime</span>
+                <span class="feat__chip">6-block canvas editor</span>
+                <span class="feat__chip">Live at VIBE Days</span>
+              </div>
+
+              <div class="statrow">
+                <div class="stat"><div class="n" data-count="9" data-suffix="">0</div><div class="l">Universities</div></div>
+                <div class="stat"><div class="n" data-count="4" data-suffix="">0</div><div class="l">Permission roles</div></div>
+                <div class="stat"><div class="n" data-count="60" data-suffix="">0</div><div class="l">Campaign lines</div></div>
+              </div>
+            </div>
+
+            <div class="elev8-mock">
+              <div class="elev8-mock__bar">
+                <span class="logo">E³</span><span class="ttl">Elev8 Metro</span><span class="role">Coordinator</span>
+                <span class="right"><span class="chip">Live Workshop ↗</span></span>
+              </div>
+              <div class="elev8-mock__body">
+                <div class="kpi-row">
+                  <div class="kpi"><div class="lab"><span>Students reached</span><span data-kpinum="5444">5,444</span></div><div class="bar"><i style="background:var(--elev8)" data-w="54"></i></div><div class="sub">54% of 10,000 target</div></div>
+                  <div class="kpi"><div class="lab"><span>Stakeholders</span><span data-kpinum="700">700</span></div><div class="bar"><i style="background:var(--elev8-2)" data-w="70"></i></div><div class="sub">70% of 1,000 target</div></div>
+                </div>
+                <div class="metro">
+                  <div class="mlab">Network metro map — campaign lines</div>
+                  <div class="metro__line"><span class="name">Connect &amp; build together</span><div class="track"><span data-w="92" style="width:0">100</span></div></div>
+                  <div class="metro__line"><span class="name">Eudres Cross Courses</span><div class="track"><span data-w="74" style="width:0">100</span></div></div>
+                  <div class="metro__line"><span class="name">Talent Activation</span><div class="track"><span data-w="40" style="width:0">40</span></div></div>
+                  <div class="metro__line"><span class="name">Intro to E³UDRES²</span><div class="track"><span data-w="22" style="width:0">20</span></div></div>
+                </div>
+                <div class="elev8-roles">
+                  <span class="rl"><i style="background:var(--elev8)"></i>Coordinator</span>
+                  <span class="rl"><i style="background:var(--elev8-2)"></i>Facilitator</span>
+                  <span class="rl"><i style="background:#6E59C7"></i>Contributor</span>
+                  <span class="rl"><i style="background:var(--ink-3)"></i>Viewer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- InRoads -->
+      <article class="card card--wide reveal" id="inroads">
+        <div class="card__pad">
+
+          <div class="ir-head">
+            <img src="assets/inroads-logo.webp" alt="InRoads Credit Union" class="ir-logo-img" />
+            <span class="card__tag" style="background:color-mix(in srgb,var(--inroads-blue) 10%,#fff);color:var(--inroads-blue)">
+              <span style="width:6px;height:6px;border-radius:50%;background:var(--inroads-blue)"></span>InRoads Credit Union &middot; Product Marketing
+            </span>
+          </div>
+
+          <div class="ir-grid">
+
+            <!-- LEFT: media showcase -->
+            <div class="ir-media">
+              <nav class="ir-tabs" aria-label="Creative assets">
+                <button class="ir-tab ir-tab--active" data-irtab="reels">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M6 6l4 2-4 2V6z" fill="currentColor" stroke="none"/></svg>
+                  Reels
+                </button>
+                <button class="ir-tab" data-irtab="post">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M2 11l3-3 2.5 2 3-3 3.5 4"/></svg>
+                  Post
+                </button>
+                <button class="ir-tab" data-irtab="postcard">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="1" y="4" width="14" height="9" rx="1.5"/><path d="M4 9h5M4 11h3"/></svg>
+                  Postcard
+                </button>
+              </nav>
+
+              <!-- Reels panel -->
+              <div class="ir-panel ir-panel--active" id="irtab-reels">
+                <div class="ir-phones">
+                  <div class="ir-phone">
+                    <div class="ir-phone__notch"></div>
+                    <div class="ir-phone__screen">
+                      <div class="ir-ig-chrome">
+                        <span class="ir-ig-user"><span class="ir-ig-av"></span>inroads_cu</span>
+                        <span class="ir-ig-more">• • •</span>
+                      </div>
+                      <video autoplay muted loop playsinline src="assets/inroads-vid1.mp4"></video>
+                      <div class="ir-ig-actions">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" width="22" height="22"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" width="22" height="22"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" width="22" height="22"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2" fill="rgba(255,255,255,.9)" stroke="none"/></svg>
+                      </div>
+                    </div>
+                    <div class="ir-phone__home"></div>
+                  </div>
+                  <div class="ir-phone">
+                    <div class="ir-phone__notch"></div>
+                    <div class="ir-phone__screen">
+                      <div class="ir-ig-chrome">
+                        <span class="ir-ig-user"><span class="ir-ig-av"></span>inroads_cu</span>
+                        <span class="ir-ig-more">• • •</span>
+                      </div>
+                      <video autoplay muted loop playsinline src="assets/inroads-vid2.mp4"></video>
+                      <div class="ir-ig-actions">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" width="22" height="22"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" width="22" height="22"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" width="22" height="22"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2" fill="rgba(255,255,255,.9)" stroke="none"/></svg>
+                      </div>
+                    </div>
+                    <div class="ir-phone__home"></div>
+                  </div>
+                </div>
+                <p class="ir-hint">Two Instagram Reels — autoplay, muted, looping</p>
+              </div>
+
+              <!-- Post panel -->
+              <div class="ir-panel" id="irtab-post">
+                <div class="ir-post-wrap">
+                  <div class="ir-post-frame">
+                    <div class="ir-post-chrome">
+                      <span class="ir-ig-user ir-ig-user--dark"><span class="ir-ig-av"></span>inroads_cu</span>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                    </div>
+                    <img src="assets/inroads-ig-post.png" alt="InRoads Instagram post — Young Adult Starter Bundle" />
+                    <div class="ir-post-actions">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    </div>
+                  </div>
+                </div>
+                <p class="ir-hint">Instagram feed post — "We're a partner for what's next."</p>
+              </div>
+
+              <!-- Postcard panel -->
+              <div class="ir-panel" id="irtab-postcard">
+                <div class="ir-postcard-wrap">
+                  <div class="ir-flip" id="ir-flip">
+                    <div class="ir-flip__inner">
+                      <div class="ir-flip__face ir-flip__front"></div>
+                      <div class="ir-flip__face ir-flip__back"></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="ir-hint">
+                  <span class="ir-flip-label" id="ir-flip-label">Showing front</span>
+                  &nbsp;·&nbsp; Click postcard to flip
+                </p>
+              </div>
+
+            </div><!-- /ir-media -->
+
+            <!-- RIGHT: campaign summary -->
+            <div class="ir-summary">
+              <h3 class="card__title" style="margin-top:0">A Student-to-Professional bundle built from 100+ surveys.</h3>
+              <p class="card__desc">Go-to-market campaign designed from real research and 10 competitor benchmarks, then presented to the President/CEO.</p>
+
+              <div class="feat" style="margin-top:20px">
+                <span class="feat__chip" style="border-color:color-mix(in srgb,var(--inroads-blue) 28%,var(--line))">100+ surveys</span>
+                <span class="feat__chip" style="border-color:color-mix(in srgb,var(--inroads-blue) 28%,var(--line))">10 competitor benchmarks</span>
+                <span class="feat__chip" style="border-color:color-mix(in srgb,var(--inroads-blue) 28%,var(--line))">Presented to CEO</span>
+                <span class="feat__chip" style="border-color:color-mix(in srgb,var(--inroads-blue) 28%,var(--line))">3 creative directions</span>
+              </div>
+
+              <div class="ir-statgrid">
+                <div class="ir-stat">
+                  <div class="ir-stat__n" data-count="18" data-prefix="+" data-suffix="%">+0%</div>
+                  <div class="ir-stat__l">Projected adoption</div>
+                </div>
+                <div class="ir-stat">
+                  <div class="ir-stat__n" data-count="120" data-prefix="~">~0</div>
+                  <div class="ir-stat__l">New users</div>
+                </div>
+                <div class="ir-stat">
+                  <div class="ir-stat__n" data-count="20" data-prefix="+" data-suffix="%">+0%</div>
+                  <div class="ir-stat__l">Engagement lift</div>
+                </div>
+                <div class="ir-stat">
+                  <div class="ir-stat__n" data-count="4000" data-suffix="">0</div>
+                  <div class="ir-stat__l">Students reached</div>
+                </div>
+              </div>
+
+              <div class="ir-research">
+                <div class="ir-research__label">Research foundation</div>
+                <div class="ir-research__bar">
+                  <span class="ir-research__seg" style="flex:100;background:var(--inroads-blue)">100+ surveys</span>
+                  <span class="ir-research__seg" style="flex:10;background:var(--inroads-teal)">10 competitors</span>
+                  <span class="ir-research__seg" style="flex:1;background:var(--inroads-amber)">1 CEO pitch</span>
+                </div>
+              </div>
+
+            </div><!-- /ir-summary -->
+
+          </div><!-- /ir-grid -->
+        </div>
+      </article>
+
+      <!-- Portland Gear -->
+      <article class="card card--wide reveal" id="portland">
+        <div class="card__pad">
+
+          <div class="pg-head">
+            <img src="assets/portland-gear-logo.png" alt="Portland Gear" class="pg-logo" />
+            <span class="card__tag" style="background:color-mix(in srgb,#00C2A2 10%,#fff);color:#00897B">
+              <span style="width:6px;height:6px;border-radius:50%;background:#00C2A2"></span>Portland Gear &middot; Product Marketing Intern
+            </span>
+          </div>
+
+          <div class="pg-bento">
+
+            <!-- LEFT: tall card — Off-Color -->
+            <div class="pg-bento-card">
+              <p class="pg-section-label">Off-Color — Interchangeable Patch Collection</p>
+
+              <!-- Three backpacks side by side -->
+              <div class="pg-bp-row">
+                <img src="assets/pg-cascade-backpack-2.png" alt="Cascade Backpack" class="pg-bp-img" />
+                <img src="assets/pg-snap-detail.jpg" alt="Snap-on attachment" class="pg-bp-img" />
+                <img src="assets/pg-velcro-detail.jpg" alt="Velcro attachment" class="pg-bp-img" />
+              </div>
+
+              <!-- Patch row -->
+              <div class="pg-patch-row">
+                <img src="assets/pg-patch-pdx.png" alt="PDX patch" class="pg-patch" />
+                <img src="assets/pg-patch-stjohns.png" alt="St. Johns Bridge Portland patch" class="pg-patch" />
+                <img src="assets/pg-patch-ducks.png" alt="Oregon Ducks patch" class="pg-patch" />
+              </div>
+              <p class="pg-img-caption">Off-Color interchangeable patch collection.</p>
+
+              <div class="pg-chips" style="margin-top:12px">
+                <span class="pg-chip">Snap-on</span>
+                <span class="pg-chip">Velcro</span>
+              </div>
+            </div><!-- /left card -->
+
+            <!-- RIGHT: two stacked cards -->
+            <div class="pg-bento-right">
+
+              <!-- TOP RIGHT: Key Products -->
+              <div class="pg-bento-card">
+                <p class="pg-section-label pg-section-label--teal">Court Classic &mdash; Key Products</p>
+                <img src="assets/pg-cc-key-products.png" alt="Court Classic key products — tee, paddles, visor, sunglasses" class="pg-key-products-img" />
+              </div>
+
+              <!-- BOTTOM RIGHT: Campaign Shoot -->
+              <div class="pg-bento-card">
+                <p class="pg-section-label pg-section-label--teal">Court Classic &mdash; Campaign Shoot &middot; Portland, Oregon</p>
+                <div class="pg-photo-grid">
+                  <img src="assets/pg-cc-sunglasses-guy.jpg" alt="Guy in sunglasses against fence" class="pg-cc-photo" />
+                  <img src="assets/pg-cc-through-net.jpg" alt="Two people crouching through net" class="pg-cc-photo" />
+                  <img src="assets/pg-cc-bench.jpg" alt="T-shirt and sunglasses on bench" class="pg-cc-photo" />
+                  <img src="assets/pg-cc-hitting.jpg" alt="Guy hitting ball with paddle" class="pg-cc-photo" />
+                  <img src="assets/pg-cc-paddle-case.jpg" alt="Paddle and case being held" class="pg-cc-photo" />
+                  <img src="assets/pg-cc-arms-crossed.jpg" alt="Two guys arms crossed on court" class="pg-cc-photo" />
+                </div>
+              </div>
+
+            </div><!-- /right column -->
+
+          </div><!-- /pg-bento -->
+
+          <!-- full-width stats row -->
+          <div class="pg-stats-row">
+            <div class="pg-stat"><div class="pg-stat__n">+35%</div><div class="pg-stat__l">Engagement</div></div>
+            <div class="pg-stat"><div class="pg-stat__n">+20%</div><div class="pg-stat__l">CTR vs. benchmark</div></div>
+            <div class="pg-stat"><div class="pg-stat__n">$25K</div><div class="pg-stat__l">Projected revenue</div></div>
+            <div class="pg-stat"><div class="pg-stat__n">10K+</div><div class="pg-stat__l">Campaign reach</div></div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Pure Portfolios -->
+      <article class="card card--wide reveal" id="pure">
+        <div class="card__pad">
+          <span class="card__tag" style="background:color-mix(in srgb,var(--pure-amber) 13%,#fff);color:#8A5A12">
+            <span style="width:6px;height:6px;border-radius:50%;background:var(--pure-amber)"></span>Pure Portfolios &middot; $330M AUM
+          </span>
+          <h3 class="card__title">Allocation modelling across three investor profiles.</h3>
+          <p class="card__desc">Preliminary financial modelling supporting $330M in assets under management — growth, balanced, and preservation, each with its own risk posture.</p>
+
+          <div class="donuts" id="donuts"></div>
+          <p class="disclaimer">Portfolio allocations shown are illustrative only and do not represent actual client portfolios or investment advice.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section class="section" id="approach">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">How I work</p>
+        <h2>Three rules I don't break.</h2>
+      </div>
+    </div>
+    <div class="principles">
+      <div class="principle reveal" data-delay="1">
+        <div class="pn">01</div>
+        <h3>Find the friction first.</h3>
+        <p>Before building anything, I find where the process actually breaks. The fix is usually buried three steps upstream of where it hurts.</p>
+        <div class="rule"></div>
+      </div>
+      <div class="principle reveal" data-delay="2">
+        <div class="pn">02</div>
+        <h3>Ship, don't prototype.</h3>
+        <p>A working thing in production beats a beautiful deck every time. I'd rather hand you something that runs on Tuesday than a plan for someday.</p>
+        <div class="rule"></div>
+      </div>
+      <div class="principle reveal" data-delay="3">
+        <div class="pn">03</div>
+        <h3>Translate both ways.</h3>
+        <p>I sit between the people who have the problem and the systems that solve it — and I speak both languages without losing the plot in either.</p>
+        <div class="rule"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <p class="eyebrow">Track record</p>
+        <h2>Where I've built.</h2>
+      </div>
+    </div>
+    <div class="exp">
+      <div class="exp__row reveal"><span class="co">ESSMA</span><span class="role">AI newsletter pipeline &amp; ticket automation</span><span class="yr">2026</span></div>
+      <div class="exp__row reveal"><span class="co">Elev8 / E³UDRES²</span><span class="role">Full-stack campaign builder, 9 universities</span><span class="yr">2026</span></div>
+      <div class="exp__row reveal"><span class="co">InRoads Credit Union</span><span class="role">Student-to-Professional GTM campaign</span><span class="yr">2025</span></div>
+      <div class="exp__row reveal"><span class="co">Portland Gear</span><span class="role">Marketing &amp; brand operations</span><span class="yr">2023</span></div>
+      <div class="exp__row reveal"><span class="co">Pure Portfolios</span><span class="role">Portfolio allocation modelling, $330M AUM</span><span class="yr">2023</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact__grid">
+      <div class="reveal">
+        <p class="eyebrow" style="margin-bottom:18px">Contact</p>
+        <h2>Let's<br><em>talk.</em></h2>
+      </div>
+      <div class="contact__links reveal" data-delay="1">
+        <a class="clink" href="#"><span class="val">Email</span><span class="lab"><span class="__cf_email__" data-cfemail="52223e3331373a3d3e36372012373f333b3e7c313d3f">[email&#160;protected]</span></span></a>
+        <a class="clink" href="#"><span class="val">LinkedIn</span><span class="lab">/in/brookebaxter ↗</span></a>
+        <a class="clink" href="#"><span class="val">Antwerp, BE</span><span class="lab">US / EU — remote ↗</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="foot">
+      <span>© 2026 Brooke Baxter</span>
+      <span>Built, not templated.</span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="app.js"></script>
+</body>
+</html>
