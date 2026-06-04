@@ -15,24 +15,22 @@
 
   /* ---------- TOOLS TICKER ---------- */
   const tools = [
-    ['n8n', '#EA4B71', 'workflows'],
-    ['Claude API', '#D97757', 'agents'],
-    ['Python', '#3C73A8', 'automation'],
-    ['Next.js', '#111111', 'full-stack'],
-    ['Supabase', '#3FCF8E', 'realtime db'],
-    ['Google Cloud Run', '#4285F4', 'serverless'],
-    ['Teamleader', '#00B2A9', 'CRM'],
-    ['Microsoft Graph', '#0078D4', 'M365 API'],
-    ['Docker', '#2496ED', 'containers'],
-    ['Mailchimp', '#FFE01B', 'delivery'],
+    ['n8n',            'workflows',  'assets/integrations/N8n-logo-new.svg'],
+    ['Claude API',     'agents',     'assets/integrations/claude-logo.svg'],
+    ['Python',         'automation', 'assets/integrations/Python-logo-notext.svg.png'],
+    ['Next.js',        'full-stack', 'assets/integrations/Nextjs-logo.svg.png'],
+    ['Supabase',       'realtime db','assets/integrations/supabase.webp'],
+    ['Google Cloud Run','serverless','assets/integrations/googlecloudrun.webp'],
+    ['Teamleader',     'CRM',        'assets/integrations/teamleader.png'],
+    ['Microsoft Graph','M365 API',   'assets/integrations/microsoftgraphapilogo.png'],
+    ['Docker',         'containers', 'assets/integrations/docker-icon-logo-icon-png-svg.png'],
+    ['Mailchimp',      'delivery',   'assets/integrations/mailchimp_icon_146054.webp'],
   ];
   const track = document.getElementById('track');
   if (track) {
-    const make = () => tools.map(([name, c, sub]) => {
-      const initials = name.replace(/[^A-Za-z0-9 ]/g, '').split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-      const dark = ['#FFE01B'].includes(c);
-      return `<div class="tool"><span class="glyph" style="background:${c};color:${dark ? '#111' : '#fff'}">${initials}</span>${name}<small>${sub}</small></div>`;
-    }).join('');
+    const make = () => tools.map(([name, sub, img]) =>
+      `<div class="tool"><img class="glyph" src="${img}" alt="${name}" />${name}<small>${sub}</small></div>`
+    ).join('');
     track.innerHTML = make() + make(); // duplicate for seamless loop
   }
 
