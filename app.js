@@ -332,13 +332,13 @@
     const backdrop = document.getElementById('privBackdrop');
     if (!btn || !modal) return;
 
-    function open() { modal.hidden = false; document.body.style.overflow = 'hidden'; close.focus(); }
-    function shut() { modal.hidden = true; document.body.style.overflow = ''; btn.focus(); }
+    function open() { modal.classList.add('is-open'); document.body.style.overflow = 'hidden'; requestAnimationFrame(() => close.focus()); }
+    function shut() { modal.classList.remove('is-open'); document.body.style.overflow = ''; btn.focus(); }
 
     btn.addEventListener('click', open);
     close.addEventListener('click', shut);
     backdrop.addEventListener('click', shut);
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) shut(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('is-open')) shut(); });
   })();
 
   /* ---------- INROADS — tab switching + flip card ---------- */
