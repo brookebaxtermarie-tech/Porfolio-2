@@ -550,12 +550,26 @@
   <div class="wrap">
     <div class="foot">
       <span>© 2026 Brooke Baxter</span>
+      <button class="foot__privacy" id="privacyBtn">Privacy Policy</button>
       <span>Built, not templated.</span>
     </div>
   </div>
 </section>
 
 </main>
+
+<!-- Privacy Policy modal -->
+<div class="priv-modal" id="privModal" role="dialog" aria-modal="true" aria-labelledby="privTitle" hidden>
+  <div class="priv-modal__backdrop" id="privBackdrop"></div>
+  <div class="priv-modal__box">
+    <button class="priv-modal__close" id="privClose" aria-label="Close">&#x2715;</button>
+    <h2 class="priv-modal__title" id="privTitle">Privacy Policy</h2>
+    <p class="priv-modal__date">Last updated: June 2026</p>
+    <p>This is a personal portfolio website. I do not collect, store, or process any personal data. There are no contact forms, cookies, trackers, or analytics on this site.</p>
+    <p>If you'd like to get in touch, you can reach me directly at <a href="mailto:brookebaxtermarie@gmail.com">brookebaxtermarie@gmail.com</a>.</p>
+    <p>This site is hosted on GitHub Pages.</p>
+  </div>
+</div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="app.js"></script>
 </body>

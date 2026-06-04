@@ -326,6 +326,23 @@
     zone.addEventListener('touchend',   () => setLean(''));
   })();
 
+  /* ---------- PRIVACY POLICY MODAL ---------- */
+  ;(function privacyInit() {
+    const btn = document.getElementById('privacyBtn');
+    const modal = document.getElementById('privModal');
+    const close = document.getElementById('privClose');
+    const backdrop = document.getElementById('privBackdrop');
+    if (!btn || !modal) return;
+
+    function open() { modal.hidden = false; document.body.style.overflow = 'hidden'; close.focus(); }
+    function shut() { modal.hidden = true; document.body.style.overflow = ''; btn.focus(); }
+
+    btn.addEventListener('click', open);
+    close.addEventListener('click', shut);
+    backdrop.addEventListener('click', shut);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) shut(); });
+  })();
+
   /* ---------- INROADS — tab switching + flip card ---------- */
   ;(function irInit() {
     const tabs = document.querySelectorAll('.ir-tab[data-irtab]');
