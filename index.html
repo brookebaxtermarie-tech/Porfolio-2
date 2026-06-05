@@ -48,16 +48,22 @@
 <header class="hero">
   <div class="wrap">
 
-    <div class="hero__intro">
-      <h1 class="hero__name display">
-        <span class="ln">Brooke</span>
-        <span class="ln"><em>Baxter</em></span>
-      </h1>
-      <div class="hero__intro-meta">
-        <p class="hero__tagline" style="line-height: 1.45">I find where processes are slow, figure out <b>why</b>, and build the thing that fixes it.</p>
-        <div class="hero__loc"><span class="pulse"></span>Genk, Belgium &middot; Open to work</div>
+    <div class="hero__layout">
+
+      <!-- LEFT: name + tagline + location -->
+      <div class="hero__left">
+        <h1 class="hero__name display">
+          <span class="ln">Brooke</span>
+          <span class="ln"><em>Baxter</em></span>
+        </h1>
+        <div class="hero__intro-meta">
+          <p class="hero__tagline" style="line-height: 1.45">I find where processes are slow, figure out <b>why</b>, and build the thing that fixes it.</p>
+          <div class="hero__loc"><span class="pulse"></span>Genk, Belgium &middot; Open to work</div>
+        </div>
       </div>
-    </div>
+
+      <!-- RIGHT: drag reveal + subtitle -->
+      <div class="hero__right">
 
     <!-- drag reveal -->
     <div class="hero__reveal-wrap show-teal" id="reveal" style="--split:52%">
@@ -104,6 +110,10 @@
     </div><!-- /drag reveal -->
 
     <p class="hero__sub">AI implementation consultant &amp; automation builder. Product/marketing hybrid working across the US and EU.</p>
+
+      </div><!-- /hero__right -->
+
+    </div><!-- /hero__layout -->
 
   </div>
 </header>
