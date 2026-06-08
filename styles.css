@@ -367,9 +367,14 @@ a { color: inherit; text-decoration: none; }
   padding: 0 8px;
 }
 .tool img {
-  width: 52px; height: 52px;
+  width: 64px; height: 64px;
   object-fit: contain; display: block;
   opacity: 0.8; transition: opacity .2s;
+}
+.tool img[alt="ChatGPT"],
+.tool img[alt="Excel"],
+.tool img[alt="HubSpot"] {
+  transform: scale(1.5);
 }
 .tool img:hover { opacity: 1; }
 
