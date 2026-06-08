@@ -25,6 +25,11 @@
     ['Microsoft Graph','M365 API',   'assets/integrations/microsoftgraphapilogo.png'],
     ['Docker',         'containers', 'assets/integrations/docker-icon-logo-icon-png-svg.png'],
     ['Mailchimp',      'delivery',   'assets/integrations/mailchimp_icon_146054.webp'],
+    ['ChatGPT',        'AI',         'assets/integrations/ChatGPT-Logo.png'],
+    ['Excel',          'spreadsheets','assets/integrations/excel logo.svg'],
+    ['Gemini',         'AI',         'assets/integrations/gemini ai logo.png'],
+    ['HubSpot',        'CRM',        'assets/integrations/HubSpot logo .png'],
+    ['VS Code',        'editor',     'assets/integrations/VS code logo.webp'],
   ];
   const track = document.getElementById('track');
   if (track) {
