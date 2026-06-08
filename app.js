@@ -30,6 +30,7 @@
     ['Gemini',         'AI',         'assets/integrations/gemini ai logo.png'],
     ['HubSpot',        'CRM',        'assets/integrations/HubSpot logo .png'],
     ['VS Code',        'editor',     'assets/integrations/VS code logo.webp'],
+    ['GitHub',         'version control','assets/integrations/github logo.png'],
   ];
   const track = document.getElementById('track');
   if (track) {
